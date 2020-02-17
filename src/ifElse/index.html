@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!--Подключение Моки-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+     <script>
+         mocha.setup('bdd');
+     </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+     <script>
+        var assert = chai.assert;
+     </script>
+     <script src="task1.js"></script>
+     <script src="task2.js"></script>
+     <script src="task3.js"></script>
+     <script src="task4.js"></script>
+     <script src="task5.js"></script>
+</head>
+<body>
+    <div id="mocha"></div>
+    <script>
+        describe("Если а - четное посчитать а * b, иначе а + b", function(){
+            it("Передаем 12 и 2 Ожидаем 24",function(){
+                assert.equal(even_odd(12,2), 24)
+            })
+            it("Передаем 3 и 2 Ожидаем 5",function(){
+                assert.equal(even_odd(3,2), 5)
+            })
+        })
+        describe("Определить какой четверти принаджлежит точка с координатам (х ; у)", function(){
+            it("Передаем 1х 1у Ожидаем 'Введенные координаты Принадлежат I четверти'", function(){
+                assert.equal(coordinate(1,1),'Введенные координаты Принадлежат I четверти'
+                )
+            })
+            it("Передаем -1х 1у Ожидаем 'Введенные координаты Принадлежат I четверти'", function(){
+                assert.equal(coordinate(-1,1),'Введенные координаты Принадлежат I I четверти'
+                )
+            })
+            it("Передаем -1х -1у Ожидаем 'Введенные координаты Принадлежат I четверти'", function(){
+                assert.equal(coordinate(-1,-1),'Введенные координаты Принадлежат I I I четверти'
+                )
+            })
+            it("Передаем 1х -1у Ожидаем 'Введенные координаты Принадлежат I V четверти'", function(){
+                assert.equal(coordinate(1,-1),'Введенные координаты Принадлежат I V четверти'
+                )
+            })
+        })
+
+        describe("Найти сумму только с положительных из трех чисел",function(){
+            it("Передаем 3 2 -1 ожидаем 5", function(){
+                assert.equal(sum_positiv(3,2,-1),5)
+            })
+        })
+    </script>
+    <script>mocha.run()</script>
+</body>
+</html>

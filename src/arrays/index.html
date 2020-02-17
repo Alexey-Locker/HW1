@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!--Подключение скриптов по домашнему заданию-->
+    <script src="task1.js"></script>
+    <script src="task2.js"></script>
+    <script src="task3.js"></script>
+    <script src="task4.js"></script>
+    <script src="task5.js"></script>
+    <script src="task6.js"></script>
+    <script src="task7.js"></script>
+        <!--Подключение Моки-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+        <script>
+            mocha.setup('bdd');
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+        <script>
+           var assert = chai.assert;
+        </script>
+</head>
+
+<body>
+    <div id="mocha"></div>
+    <script>
+        describe("Максимальное и минимальное значение",function(){
+             it("[1, 32, 23, 43, 65, 732, 2, 553]   Ожидаем [1, 732]", function(){
+        assert.deepEqual(max_min([1, 32, 23, 43, 65, 732, 2, 553]),[1,732])
+    })
+})
+describe("Сума нечетных чисел в массиве", function(){
+    it("[1, 32, 23, 43, 65, 732, 2, 553]   Ожидаем 685",function(){
+        assert.deepEqual(sum_odd([1, 32, 23, 43, 65, 732, 2, 553]), 685)
+    })
+})
+
+describe("Реверс массива", function(){
+    it("[1,2,3,4,5,6,7,8]   Ожидаем [8,7,6,5,4,3,2,1]", function(){
+        assert.deepEqual(revers([1,2,3,4,5,6,7,8]), [8,7,6,5,4,3,2,1])
+    })
+})
+describe("Количество нечетных символов в массиве", function(){
+    it('[1, 32, 23, 43, 65, 732, 2, 553]    Ожидаем   5', function(){
+        assert.deepEqual(odd_amount([1, 32, 23, 43, 65, 732, 2, 553]),5)
+    })    
+})
+describe("Смена местами половины элементов массива" , function(){
+    it("[1,2,3,4,5,6,7,8]     Ожидаем [5,6,7,8,1,2,3,4]",function(){
+        assert.deepEqual(arr_drop([1,2,3,4,5,6,7,8]),[5,6,7,8,1,2,3,4])
+    })
+})
+describe("Сортировки", function(){
+    it("Сортировка пузырем [3, 5, 2, 4, 6, 8, 7, 9, 1, 10]    Ожидаем [1,2,3,4,5,6,7,8,9,10]", function(){
+        assert.deepEqual(sort_hubble([3, 5, 2, 4, 6, 8, 7, 9, 1, 10]), [1,2,3,4,5,6,7,8,9,10]);
+    })
+    it("Сортировка перебором [3, 5, 2, 4, 6, 8, 7, 9, 1, 10]  Ожидаем [1,2,3,4,5,6,7,8,9,10]  ",function(){
+        assert.deepEqual(sort_selection([3, 5, 2, 4, 6, 8, 7, 9, 1, 10]),[1,2,3,4,5,6,7,8,9,10]);
+    })
+    it ("Сортировка вставками [3, 5, 2, 4, 6, 8, 7, 9, 1, 10] Ожидаем [1,2,3,4,5,6,7,8,9,10]", function(){
+        assert.deepEqual(sort_insert([3, 5, 2, 4, 6, 8, 7, 9, 1, 10])[1,2,3,4,5,6,7,8,9,10]);
+    })
+})
+describe("Сортировки со '*'", function(){
+    it("Быстрая сортировка [3, 5, 2, 4, 6, 8, 7, 9, 1, 10] Ожидаем [1,2,3,4,5,6,7,8,9,10]", function(){
+        assert.deepEqual(qsort([3, 5, 2, 4, 6, 8, 7, 9, 1, 10]),[1,2,3,4,5,6,7,8,9,10]);
+    })
+    it("Сортировка Шелла [3, 5, 2, 4, 6, 8, 7, 9, 1, 10] Ожидаем [1,2,3,4,5,6,7,8,9,10]",function(){
+        assert.deepEqual(ShellSort([3, 5, 2, 4, 6, 8, 7, 9, 1, 10]),[1,2,3,4,5,6,7,8,9,10]);
+    })
+    it("Сортировка слиянием [3, 5, 2, 4, 6, 8, 7, 9, 1, 10] Ожидаем [1,2,3,4,5,6,7,8,9,10]", function(){
+        assert.deepEqual(merge_sort([3, 5, 2, 4, 6, 8, 7, 9, 1, 10]), [1,2,3,4,5,6,7,8,9,10])
+    })
+})
+    </script>
+    <script>mocha.run()</script>
+</body>
+</html>

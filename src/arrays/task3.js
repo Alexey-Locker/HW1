@@ -1,4 +1,10 @@
 ////// Реверс массива //////
-let arr = [1, 32, 23, 43, 65, 732, 2, 553];
-arr.sort( (a, b) => a - b ); 
-console.log("Реверс массива " + arr.reverse());
+function revers(arr){
+
+         for(let i = 0; i < (arr.length / 2); i++){
+             let a = arr[arr.length - 1 - i];
+             arr[arr.length - 1 - i] = arr[i];
+             arr[i] = a;
+         }
+    return arr;
+}

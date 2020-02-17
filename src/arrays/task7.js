@@ -1,6 +1,4 @@
 ////// Быстрая сортировка //////
-
-let arr3 = [3, 5, 2, 4, 6, 8, 7, 9, 1, 10];
 const qsort = (arr3) =>{
      if (arr3.length < 2) {
         return arr3;
@@ -11,11 +9,8 @@ const qsort = (arr3) =>{
         return[...qsort(less), pivot, ...qsort(greater)];
      }
 }
-console.log(qsort(arr3) + " Данный массив был отсортирован при помощи быстрой сортировки");
 
 /// Сортировка слиянием ////// 
-
-arr3 = [3, 5, 2, 4, 6, 8, 7, 9, 1, 10];
 function merge(left, right){
     let L = 0, R=0, result = [];
     
@@ -42,11 +37,9 @@ function merge_sort (items){
    
 }
 
-console.log(merge_sort(arr3) + " Данный массив был отсортирован при помощи метода слиянием");
 
 /// Сортировка Шелла //////
 
-arr3 = [3, 5, 2, 4, 6, 8, 7, 9, 1, 10];
 function ShellSort (arr) {
     let gap = Math.floor(arr.length / 2);
     while (gap >= 1) {
@@ -63,4 +56,3 @@ function ShellSort (arr) {
     }
     return arr;
 }
-console.log(ShellSort(arr3) + " Данный массив был отсортирован при помощи метода Шелла");

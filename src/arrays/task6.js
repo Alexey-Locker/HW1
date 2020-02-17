@@ -1,6 +1,5 @@
 ////// Сортировка пузирем //////
-
-let arr1 = [3, 5, 2, 4, 6, 8, 7, 9, 1, 10];
+function sort_hubble(arr1){
 for(let i = 0; i < arr1.length; i++){
     for(let j = i + 1; j < arr1.length ; j++){
         if(arr1[i] > arr1[j]){
@@ -10,11 +9,11 @@ for(let i = 0; i < arr1.length; i++){
         }
     }
 }
-console.log(arr1 + " Данный массив был отсортирован при помощи метода пузыря" );
+return arr1;
+}
 
 ////// Сортировка выбором //////
-
-let arr2 = [3, 5, 2, 4, 6, 8, 7, 9, 1, 10];
+function sort_selection(arr2){
 for(let i = 0; i < arr2.length; i++){
     let num = arr2[i];
     for(let j = i + 1; j < arr2.length; j++ ){
@@ -24,16 +23,18 @@ for(let i = 0; i < arr2.length; i++){
             arr2[i] = num;
         }
     }
+  }
+  return arr2;
 }
-console.log(arr2 + " Данный массив был отсортирован при помощи метода выбора" );
+ 
 
 ////// Сортировка вставками //////
-
-let arr3 = [3, 5, 2, 4, 6, 8, 7, 9, 1, 10];
+function sort_insert(arr3){
 for (let i = 0; i < arr3.length; i++){ 
        let v = arr3[ i ], j = i-1;
        while (j >= 0 && arr3[j] > v)
            {arr3[j+1] = arr3[j]; j--;}
        arr3[j+1] = v;
     }  
-console.log(arr3 + " Данный массив был отсортирован при помощи метода вставками");  
+    return arr3;
+}
