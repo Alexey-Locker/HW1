@@ -14,11 +14,12 @@
 
 }
 
-.arifmetica {
+.arithmetica {
     height: 300px;
+    width:25%;
     background-color: rgb(216, 226, 75);
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     flex-direction: column;
 }
 .numbers {
