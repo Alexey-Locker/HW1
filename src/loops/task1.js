@@ -1,11 +1,8 @@
-
+function oddSum(a){
 let amt = 0;
-for (var i = 0; i < 100; i++){
+for (var i = 0; i < a; i++){
     if(i % 2 === 0){
-      c += i;
-      amt += 1;    
+      amt += i;    
     } 
-    if (i === 99){
-        alert("Сумма " + c + " Количетсво четных символов в диапазоне " + amt);
-    }
-}
+    
+}return amt;}
