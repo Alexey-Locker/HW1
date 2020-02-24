@@ -1,106 +1,44 @@
 <!DOCTYPE html>
- <html lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Calc</title>
-    <link rel="stylesheet" href="source/main.css">
-<!-- подключаем стили Mocha, для отображения результатов -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
-<!-- подключаем библиотеку Mocha -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
-<!-- настраиваем Mocha: предстоит BDD-тестирование -->
-    <script>
-        mocha.setup('bdd');
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
-<!-- в chai есть много всего, выносим assert в глобальную область -->
-    <script>
-       var assert = chai.assert;
-    </script>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-<div id="mocha"></div>
-
-<script>
-    describe("Logic Calc",function(){
-             it("Sum 3 + 2 = 5", function(){
-        assert.equal(sum(3,2),5)
-    })
-             });
-    describe("Logic Calc",function(){
-            it("Subtraction 3 - 2 = 1",function(){
-                assert.equal(substr(3,2), 1)
-            })
-        });
-    describe("Logic Calc", function(){
-        it("Multip 3 * 2 = 6",function(){
-            assert.equal(multip(3,2), 6);
-        })
-    });
-    describe("Logic Calc", function(){
-        it("Division 3 / 2 = 1.5", function(){
-            assert.equal(division(3,2), 1.5);
-        })
-    });
     
-    
-    // describe("Assignment Value and Arithmetic",function(){
-    //     it('"3+2" = 5',function(){
-    //         assert.equal(valueAssign("3+2"), 5);
-    //     })
-    // })   
-    // describe("Assignment Value and Arithmetic",function(){
-    //     it('"3-2" = 1',function(){
-    //         assert.equal(valueAssign("3-2"), 1);
-    //     })
-    // })    
-    // describe("Assignment Value and Arithmetic",function(){
-    //     it('"3*2" = 6',function(){
-    //         assert.equal(valueAssign("3*2"), 6);
-    //     })
-    // })    
-    // describe("Assignment Value and Arithmetic",function(){
-    //     it('"3/2" = 1.5',function(){
-    //         assert.equal(valueAssign("3/2"), 1.5);
-    //     })
-    // })  
-   
-    </script>
-    
-    <script>mocha.run()</script>
-
-  
-
-
-<div class="calc">
-    <input type="text" class="label" id="label" disabled >
-    <div class="numbers">
-        <input type="button" value="8"  class="button number">
-        <input type="button" value="7"  class="button number">
-        <input type="button" value="9"  class="button number">
-        <input type="button" value="4"  class="button number">
-        <input type="button" value="5"  class="button number">
-        <input type="button" value="6"  class="button number">
-        <input type="button" value="1"  class="button number">
-        <input type="button" value="2"  class="button number">
-        <input type="button" value="3"  class="button number">
-        <input type="button" value="0"  class="button number">
-        <input type="button" value="="  class="button number">
-        <div class="twice">
-            <input type="button"   value="AC" class="button twiceButton number">
-            <input type="button" value="." class="button twiceButton number">
+    <div class="calculator">
+        <input type="text" class="display" id="display">
+        <div class="flex">
+            <input type="button" value="AC" class="button" id="clear">
+            <input type="button" value="&divide;" class="button operator">
         </div>
-        
+        <div class="flex">
+            <input type="button" value="7" class="button">
+            <input type="button" value="8" class="button">
+            <input type="button" value="9" class="button">
+            <input type="button" value="&times;" class="button operator">
+        </div>
+        <div class="flex">
+            <input type="button" value="4" class="button">
+            <input type="button" value="5" class="button ">
+            <input type="button" value="6" class="button">
+            <input type="button" value="-" class="button operator">
+        </div>
+        <div class="flex">
+            <input type="button" value="1" class="button">
+            <input type="button" value="2" class="button">
+            <input type="button" value="3" class="button">
+            <input type="button" value="+" class="button operator">
+        </div>
+        <div class="flex">
+            <input type="button" value="0" class="button zero">
+            <input type="button" value="." class="button" id="dot">
+            <input type="button" value="=" class="button " id="equal">
+        </div>
     </div>
-    <div class="arithmetica">
-        <input type="button" value="/" class="button number">
-        <input type="button" value="X" class="button number">
-        <input type="button" value="-" class="button number">
-        <input type="button" value="+" class="button number">
-
-    </div>
-</div>
-<script src="source/calc.js"></script>
+    <script src="./source/calc.js"></script>
 </body>
 </html>

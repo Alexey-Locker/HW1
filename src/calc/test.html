@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- подключаем стили Mocha, для отображения результатов -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+    <!-- подключаем библиотеку Mocha -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+    <!-- настраиваем Mocha: предстоит BDD-тестирование -->
+        <script>
+            mocha.setup('bdd');
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+    <!-- в chai есть много всего, выносим assert в глобальную область -->
+        <script>
+           var assert = chai.assert;
+        </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <div id="mocha"></div>
+    <script src="./source/calc.js"></script>
+    <script>
+        describe("Logic Calc",function(){
+                 it("Sum 3 + 2 = 5", function(){
+            assert.equal(sum(3,2),5)
+        })
+                 });
+        describe("Logic Calc",function(){
+                it("Subtraction 3 - 2 = 1",function(){
+                    assert.equal(substr(3,2), 1)
+                })
+                it("Substraction 3.2 - 1 = 2.2", function(){
+                    assert.equal(substr(3.2,1),2.2)
+                })
+            });
+        describe("Logic Calc", function(){
+            it("Multip 3 * 2 = 6",function(){
+                assert.equal(multip(3,2), 6);
+            })
+        });
+        describe("Logic Calc", function(){
+            it("Division 3 / 2 = 1.5", function(){
+                assert.equal(division(3,2), 1.5);
+            })
+            it("Division 2 / 0 = error", function(){
+                assert.equal(division(3,0), "error")
+            })
+            it("Divivsion 0 / 0 = error", function(){
+                assert.equal(division(0,0),"error")
+            })
+        });
+        
+    
+        </script>
+        
+        <script>mocha.run()</script>
+</body>
+</html>
