@@ -54,6 +54,37 @@
             it("Передаем 3 2 -1 ожидаем 5", function(){
                 assert.equal(sum_positiv(3,2,-1),5)
             })
+            it ("Передаем 3 2 1 ожидаем 6", function(){
+                assert.equal(sum_positiv(3,2,1),6)
+            })
+        })
+        describe("Выражение Максимального значения", function(){
+            it("Передаем 1 2 3 Ожидаем 9", function(){
+                assert.equal(max(1,2,3),9)
+            })
+            it("Передаем 1 1 1 Ожидаем 6", function(){
+                assert.equal(max(1,1,1),6)
+            })
+        })
+        describe("Определение оценки студента по его рейтингу, на основе 100 бальной системе", function(){
+            it("Передаем 10 ожидаем 'Ваша оценка F'",function(){
+                assert.equal(rating(10),"Ваша оценка F")
+            })
+            it("Передаем 20 ожидаем 'Ваша оценка E'",function(){
+                assert.equal(rating(20),"Ваша оценка E")
+            })
+            it("Передаем 50 ожидаем 'Ваша оценка D'",function(){
+                assert.equal(rating(50),"Ваша оценка D")
+            })
+            it("Передаем 70 ожидаем 'Ваша оценка C'",function(){
+                assert.equal(rating(70),"Ваша оценка C")
+            })
+            it("Передаем 80 ожидаем 'Ваша оценка B'",function(){
+                assert.equal(rating(80),"Ваша оценка B")
+            })
+            it("Передаем 100 ожидаем 'Ваша оценка A'",function(){
+                assert.equal(rating(100),"Ваша оценка A")
+            })
         })
     </script>
     <script>mocha.run()</script>

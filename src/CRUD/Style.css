@@ -1,0 +1,35 @@
+#Hub{
+    background: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+p{    
+}
+.row{
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    
+}
+.column{
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    width: 25%;
+    height: 30px;
+    background: yellow;
+    text-align: center;
+}
+.input{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.event{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

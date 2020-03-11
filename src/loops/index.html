@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Подключение Моки-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+    <script>
+        mocha.setup('bdd');
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+    <script>
+       var assert = chai.assert;
+    </script>
+
+</head>
+<body>
+    <script src="task1.js"></script>
+    <script src="task2.js"></script>
+    <script src="task3.js"></script>
+    <script src="task4.js"></script>
+    <script src="task5.js"></script>
+    <script src="task6.js"></script>
+    <div id="mocha"></div>
+    <script>
+        describe("Cумма четных символов в диапазоне", function(){
+            it("Передаем диапазон 100 и получаем 2450",function(){
+                assert.equal(oddSum(100),2450)
+            })
+        });
+        describe("Проверить, является ли число простым", function (){
+            it("Передаем 2 получаем 'Данное число простое' ", function(){
+                assert.equal(primeNumber(2),"Данное число простое")
+            })
+            it("Передаем 6 получаем 'Данное число не является простым' ", function(){
+                assert.equal(primeNumber(6),"Данное число не является простым")
+            })
+        })
+        describe("Вычисление факториала", function(){
+            it("Передаем 6 получаем 720", function(){
+                assert.equal(factorial(6), 720)
+            })
+        })
+        describe("Зеркальные числа",function (){
+            it("Передаем 543 получаем 345", function(){
+                assert.equal(mirror(543),345)
+            })
+        })
+        describe("Сума указаных чисел",function(){
+            it("Передаем 543 ожидаем 12", function(){
+                assert.equal(summAllNumber(543),12)
+            })
+        })
+    </script>
+    <script>mocha.run()</script>
+</body>
+</html>
