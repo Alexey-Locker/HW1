@@ -1,0 +1,130 @@
+.crud {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.column {
+    max-width: 100px;
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+.hub {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.value {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    min-width: 200px;
+}
+
+.value__data {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.value__data-text {
+    padding: 5px 15px;
+    width: 80%;
+    margin-right: 5%;
+}
+
+.value__data-label {
+    text-align: center;
+    width: 28%;
+    min-width: 200px;
+}
+
+.hub__input {
+    width: 20%;
+}
+
+.name-main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.base__name-main {
+    border-top: 1px solid silver;
+    border-bottom: 1px solid silver;
+}
+
+.value__data-button {
+    width: 30%;
+    background-color: rgb(74, 223, 37);
+    padding: 5px 20px;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+    transition: 1s;
+    min-width: 200px;
+    margin-top: 5px;
+}
+
+.value__data-button:hover {
+    transition: 1s;
+    background-color: red;
+    border-radius: 20px;
+}
+
+.value__data-button:focus {
+    box-shadow: 0 0 12px rgba(42, 61, 233, 0.514);
+    transition: 1s;
+    background-color: red;
+    border-radius: 20px;
+}
+
+.data__row {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid silver;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.hub__input {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.radio__name-local::before {
+    content: "LocalStorage";
+    margin-left: 20px;
+}
+
+.radio__name-idb::before {
+    margin-left: 20px;
+    content: "indexedDB";
+}
+
+.radio__name-server::before {
+    margin-left: 20px;
+    content: "Server";
+}
+
+.name-main_p {
+    max-width: 100px;
+    width: 100%;
+}
+
+.radio {
+    width: 8%;
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}

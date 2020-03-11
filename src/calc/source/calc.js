@@ -1,72 +1,96 @@
 "use strict"
-const equation = document.getElementById("label");
-const button = document.querySelectorAll(".number")
-let digit1;
-let digit2;
-function sum(a,b){return a + b;}
 
+const display = document.getElementById("display");
+const button = document.querySelectorAll(".button");
+const equal = document.getElementById("equal");
 
+function sum(a, b) { return +a + +b; }
 
-function substr(a,b){return a - b;}
+function substr(a, b) { return a - b; }
 
+function multip(a, b) { return a * b; }
 
-
-function multip(a,b){return a * b;}
-
-
-function division(a,b){return a / b;}
-
-
-// function valueAssign(value){
-//     let digit = 0;
-    
-//     for(let i = 0; i < value.length; i++){
-//         let num = value[i];
-//         if (num == "+"){
-//             digit = Number(digit);
-//             return sum(digit, valueAssign(value.slice(i+1)))
-//         }else if(num == "-"){
-//             return substr(digit, valueAssign(value.slice(i+1)))
-//         }else if(num == "*"){
-//             return multip(digit, valueAssign(value.slice(i+1)))
-//         }else if(num == "/"){
-//             return division(digit, valueAssign(value.slice(i+1)))
-//         } else {
-//                 digit += num;
-//             }
-        
-//     }
-//     return digit;
-// }
-
-function equally (event){
-    console.log(digit1 + "   " + digit2 + "   " + sum(digit1, equation.value));
-    switch (event.target.value){
-        case "+": 
-        (digit1 === undefined) ? digit1 = equation.value : digit2 = equation.value;
-        equation.value = ""
+function division(a, b) {
+    if (b == 0) { return "error" 
+}else if(a == 0 && b == 0){
+    return "error" 
+} else {return a / b;} 
+}
+let number1;
+let number2;
+let operator;
+let dotClick = true;
+function clickButton(event) {
+    switch (event.target.value) {
+        case "+":
+            (number1 == undefined) ? number1 = display.value : arithmetic();
+            display.value = ""
+            operator = "+"
+            dotClick = true;
             break;
-        case "-": 
-        (digit1 === undefined) ? digit1 = equation.value : digit2 = equation.value;
-        equation.value = ""
+        case "-":
+            (number1 == undefined) ? number1 = display.value : arithmetic();
+            operator = "-"
+            display.value = ""
+            dotClick = true;
             break;
-        case "/": 
-        (digit1 === undefined) ? digit1 = equation.value : digit2 = equation.value;
-        equation.value = ""
+        case "÷":
+            (number1 == undefined) ? number1 = display.value : arithmetic();
+            operator = "/"
+            display.value = ""
+            dotClick = true;
             break;
-        case "X": 
-        (digit1 === undefined) ? digit1 = equation.value : digit2 = equation.value;
-        equation.value = ""
+        case "×":
+            (number1 == undefined) ? number1 = display.value : arithmetic();
+            operator = "*"
+            display.value = ""
+            dotClick = true;
+            break;
+        case "=":     
+        break;
+        case ".":
+            if (dotClick){        
+                if((display.value ^ 0) == display.value){ 
+                    display.value += ".";
+                    dotClick = false;
+                }
+            }
+        break;
+        case "AC":
+            display.value = ""
+            number1 = undefined;
+            number2 = undefined;
+            dotClick = true;
             break;
         default:
-            equation.value += event.target.value; 
+            if (display.value == "error" || display.value == "NaN") display.value = ""
+            display.value += event.target.value;
     }
-    
-}
-function displayLog(event){
-    equation.value = event;
+
 }
 
+function arithmetic() {    
+    dotClick = true;
+    if (number1 == undefined) number1 = display.value;
+    number2 = display.value;
+    switch (operator) {
+        case "+":
+            display.value = sum(number1, number2);
+            break;
+        case "-":
+            display.value = substr(number1, number2);
+            break;
+        case "/":
+            display.value = division(number1, number2);
+            break;
+        default:
+            display.value = multip(number1, number2);
+    }
+    number1 = undefined;
+    number2 = undefined;
+}
+equal.addEventListener("click", arithmetic);
+
 button.forEach((elem) => {
-    elem.addEventListener("click", equally)
+    elem.addEventListener("click", clickButton);
 })

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Copy Me</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+
+<body>
+    <section class="crud">
+        <div class="crud__hub hub">
+            <div class="hub__input radio">
+                <input name="base" class="radio__name radio__name-local" type="radio">
+                <input name="base" class="radio__name radio__name-idb" type="radio">
+                <input name="base" class="radio__name radio__name-server" type="radio">
+            </div>
+            <div class="hub__input-value value">
+                <div class="value__data">
+                    <label class="value__data-label"> ID
+                        <input type="number" class="value__data-text">
+                    </label>
+
+                    <label class="value__data-label">First Name
+                        <input type="text" class="value__data-text">
+                    </label>
+                    <label class="value__data-label">Last Name
+                        <input type="text" class="value__data-text">
+                    </label>
+                    <label class="value__data-label"> Age
+                        <input type="number" class="value__data-text">
+                    </label>
+                    <label class="value__data-label"> Number
+                        <input type="number" class="value__data-text">
+                    </label>
+                    <label class="value__data-label">Email
+                        <input type="text" class="value__data-text">
+                    </label>
+                </div>
+                <div class="value__data">
+                    <input type="button" class="value__data-button value__data-button-create" value="Create">
+                    <input type="button" class="value__data-button value__data-button-update" value="Update">
+                    <input type="button" class="value__data-button value__data-button-delete" value="Delete">
+                </div>
+            </div>
+        </div>
+        <div class="crud__data-base base">
+            <div class="base__name-main name-main">
+                <p class="name-main_p">ID</p>
+                <p class="name-main_p">First Name</p>
+                <p class="name-main_p">Last Name</p>
+                <p class="name-main_p">Age</p>
+                <p class="name-main_p">Phone</p>
+                <p class="name-main_p">Email</p>
+
+            </div>
+            <div id="base__data"></div>
+        </div>
+    </section>
+
+
+
+    <!-- Scripts -->
+    <script src="../build/js/index.js"></script>
+</body>
+
+</html>
